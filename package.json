@@ -1,0 +1,15 @@
+{
+  "name": "task-2.1p---node.js-and-express",
+  "version": "1.0.0",
+  "main": "nodejs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}

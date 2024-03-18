@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Apurv SIT737</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script>
+    function toggleCollaborationFields() {
+      var mode = document.getElementById("collaborationMode").value;
+      var inPersonFields = document.getElementById("inPersonFields");
+      var onlineFields = document.getElementById("onlineFields");
+
+      if (mode === "inPerson") {
+        inPersonFields.style.display = "block";
+        onlineFields.style.display = "none";
+      } else if (mode === "online") {
+        inPersonFields.style.display = "none";
+        onlineFields.style.display = "block";
+      } else {
+        inPersonFields.style.display = "none";
+        onlineFields.style.display = "none";
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>My Simple Study Buddy Program Registration Page</h1>
+    <form>
+      <form>
+        <div class="form-group">
+          <label for="studentID">Student ID Number:</label>
+          <input type="text" class="form-control" id="studentID" name="studentID" required>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <select class="form-select" id="title" name="title" required>
+            <option value="" disabled selected>Select Title</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Ms">Ms</option>
+            <option value="Dr">Dr</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="preferredName">Preferred First Name:</label>
+          <input type="text" class="form-control" id="preferredName" name="preferredName" required>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <label for="day">Day</label>
+            <select class="form-select" id="day" name="day" required>
+              <option value="" disabled selected>Day</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+              <option value="2">4</option>
+              <option value="2">5</option>
+              <option value="2">6</option>
+              <option value="2">7</option>
+              <option value="2">8</option>
+              <option value="2">9</option>
+              <option value="2">10</option>
+              <option value="2">11</option>
+              <option value="2">12</option>
+              <option value="2">13</option>
+              <option value="2">14</option>
+              <option value="2">15</option>
+              <option value="2">16</option>
+              <option value="2">17</option>
+              <option value="2">18</option>
+              <option value="2">19</option>
+              <option value="2">20</option>
+              <option value="2">21</option>
+              <option value="2">22</option>
+              <option value="2">23</option>
+              <option value="2">24</option>
+              <option value="2">25</option>
+              <option value="2">26</option>
+              <option value="2">27</option>
+              <option value="2">28</option>
+              <option value="2">29</option>
+              <option value="2">30</option>
+              <option value="31">31</option>
+            </select>
+          </div>
+
+
+          <div class="col">
+            <label for="month">Month</label>
+            <select class="form-select" id="month" name="month" required>
+              <option value="" disabled selected>Month</option>
+              <!-- Add options for the month (January-December) -->
+
+              $months = array(
+              1 => 'January',
+              2 => 'February',
+              3 => 'March',
+              4 => 'April',
+              5 => 'May',
+              6 => 'June',
+              7 => 'July',
+              8 => 'August',
+              9 => 'September',
+              10 => 'October',
+              11 => 'November',
+              12 => 'December'
+              );
+              foreach ($months as $monthNumber => $monthName) {
+              echo "<option value="1">January </option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>;
+              }
+
+            </select>
+          </div>
+          <div class="col">
+            <label for="year">Year</label>
+            <select class="form-select" id="year" name="year" required>
+              <option value="" disabled selected>Year</option>
+            </select>
+          </div>
+
+          <script>
+            var selectYear = document.getElementById("year");
+            var currentYear = new Date().getFullYear();
+
+            for (var year = 1950; year <= currentYear; year++) {
+              var option = document.createElement("option");
+              option.value = year;
+              option.text = year;
+              selectYear.appendChild(option);
+            }
+          </script>
+
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select class="form-control" id="gender" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Transgender">Transgender</option>
+            <option value="Other">Other</option>
+            <option value="PreferNotToSay">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="deakinEmail">Deakin Email:</label>
+          <input type="email" class="form-control" id="deakinEmail" name="deakinEmail" required>
+          <small class="form-text text-muted">Please enter a valid Deakin University email address.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="contactNumber">Contact Number:</label>
+          <input type="tel" class="form-control" id="contactNumber" name="contactNumber"
+            placeholder="Enter Your Mobile Number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" class="form-control" id="address" name="address"
+            placeholder="Enter Your Street Name and Number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" class="form-control" id="city" name="city" required>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input type="text" class="form-control" id="state" name="state" required>
+        </div>
+
+        <div class="form-group">
+          <label for="postcode">Postcode:</label>
+          <input type="text" class="form-control" id="postcode" name="postcode" required>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course Enrolled In:</label>
+          <select class="form-control" id="course" name="course" required>
+            <option value="" disabled selected>Select Course</option>
+            <option value="S535">S535: Graduate Certificate of Cyber Security</option>
+            <option value="S538">S538: Graduate Certificate of Information Technology Management</option>
+            <option value="S576">S576: Graduate Certificate of Data Analytics</option>
+            <option value="S578">S578: Graduate Certificate of Information Technology</option>
+            <option value="S734">S734: Master of Cyber Security</option>
+            <option value="S736">S736: Master of Applied AI</option>
+            <option value="S738">S738: Master of IT Management</option>
+            <option value="S777">S777: Master of Data Science</option>
+            <option value="S776">S776: Master of IT</option>
+            <option value="M761">M761: Master of Business Analytics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Units Name</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>SIT707</option>
+            <option>SIT708</option>
+            <option>SIT737</option>
+            <option>SIT764</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="collaborationMode">Mode of Collaboration:</label>
+          <select class="form-control" id="collaborationMode" name="collaborationMode"
+            onchange="toggleCollaborationFields()" required>
+            <option value="" disabled selected>Select Mode of Collaboration</option>
+            <option value="inPerson">In Person</option>
+            <option value="online">Online</option>
+          </select>
+        </div>
+
+        <!-- Additional fields for in-person collaboration -->
+        <div class="form-group" id="inPersonFields" style="display: none;">
+          <label for="libraryLocation">Library Location:</label>
+          <select class="form-control" id="libraryLocation" name="libraryLocation">
+            <option value="" disabled selected>Select Library Location</option>
+            <option value="GeelongWaurnPonds">Geelong - Waurn Ponds</option>
+            <option value="GeelongWaterfront">Geelong - Waterfront</option>
+            <option value="MelbourneBurwood">Melbourne - Burwood</option>
+          </select>
+        </div>
+
+        <!-- Additional fields for online collaboration -->
+        <div class="form-group" id="onlineFields" style="display: none;">
+          <label for="technology">Technology:</label>
+          <select class="form-control" id="technology" name="technology">
+            <option value="" disabled selected>Select Technology</option>
+            <option value="Zoom">Online - Zoom Meeting</option>
+            <option value="Teams">Online - MS Teams</option>
+            <option value="Phone">Online - Phone Call</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="availability">Days of Availability:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="monday" name="availability[]" value="Monday">
+            <label class="form-check-label" for="monday">Monday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tuesday" name="availability[]" value="Tuesday">
+            <label class="form-check-label" for="tuesday">Tuesday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="wednesday" name="availability[]" value="Wednesday">
+            <label class="form-check-label" for="wednesday">Wednesday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="thursday" name="availability[]" value="Thursday">
+            <label class="form-check-label" for="thursday">Thursday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="friday" name="availability[]" value="Friday">
+            <label class="form-check-label" for="friday">Friday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="saturday" name="availability[]" value="Saturday">
+            <label class="form-check-label" for="saturday">Saturday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sunday" name="availability[]" value="Sunday">
+            <label class="form-check-label" for="sunday">Sunday</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nonAvailability">Days of Non-Availability:</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_monday" name="nonAvailability[]" value="Monday">
+            <label class="form-check-label" for="na_monday">Monday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_tuesday" name="nonAvailability[]" value="Tuesday">
+            <label class="form-check-label" for="na_tuesday">Tuesday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_wednesday" name="nonAvailability[]"
+              value="Wednesday">
+            <label class="form-check-label" for="na_wednesday">Wednesday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_thursday" name="nonAvailability[]" value="Thursday">
+            <label class="form-check-label" for="na_thursday">Thursday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_friday" name="nonAvailability[]" value="Friday">
+            <label class="form-check-label" for="na_friday">Friday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_saturday" name="nonAvailability[]" value="Saturday">
+            <label class="form-check-label" for="na_saturday">Saturday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="na_sunday" name="nonAvailability[]" value="Sunday">
+            <label class="form-check-label" for="na_sunday">Sunday</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="preferredTimes">Preferred Times:</label>
+          <select class="form-select" id="preferredTimes" name="preferredTimes" required>
+            <option value="" disabled selected>Select Preferred Times</option>
+            <option value="Mornings">Mornings</option>
+            <option value="During the day">During the day</option>
+            <option value="Evenings">Evenings</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="startingDate">Starting Date:</label>
+          <input type="date" class="form-control" id="startingDate" name="startingDate" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </form>
+  </div>
+</body>
+
+</html>
